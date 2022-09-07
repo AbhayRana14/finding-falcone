@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { PersistGate } from "redux-persist/lib/integration/react";
 import { store, persistor } from "./redux/store";
 import "./index.scss";
+import "@progress/kendo-theme-default/dist/all.css";  
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";

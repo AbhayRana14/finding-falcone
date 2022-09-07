@@ -1,7 +1,11 @@
 import React from "react";
-import background from "../../../assets/images/background.svg";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { exitGame } from "../../../redux/falcone/reducer";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <>
       <header className="header-div">
@@ -15,10 +19,21 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a href="#">Reset</a>
+            <a href="/home">Reset</a>
           </li>
           <li>
             <a href="https://www.geektrust.com/">GeekTrust|Home</a>
+          </li>
+          <li>
+            <a
+              href=""
+              onClick={() => {
+                dispatch(exitGame());
+                navigate("");
+              }}
+            >
+              EXIT GAME
+            </a>
           </li>
         </ul>
       </header>

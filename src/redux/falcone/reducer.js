@@ -51,6 +51,11 @@ export const falconeSlice = createSlice({
     getVehiclesFailure: (state) => {
       state.isLoading = false;
     },
+
+    // EXIT GAME
+    exitGame: (state) => {
+      state.isLoading = false;
+    },
   },
 });
 
@@ -74,5 +79,8 @@ export const {
   getVehiclesFetch,
   getVehiclesSuccess,
   getVehiclesFailure,
+
+  //EXIT GAME
+  exitGame,
 } = falconeSlice.actions;
 export default falconeSlice.reducer;

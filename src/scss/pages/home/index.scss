@@ -18,9 +18,40 @@
       padding: 100px;
       color: wheat;
     }
-
+    .find-container {
+      .btn-class {
+        cursor: pointer;
+        color: white;
+        margin-top: 40px;
+        width: 100%;
+        padding: 12px;
+        outline: none;
+        background: #800080;
+        border: none;
+        font-size: 18px;
+        border-radius: 10px;
+        transition: 0.4s;
+        &:hover {
+          background: #b3afb3;
+        }
+      }
+      .btn-disabled-class {
+        cursor: not-allowed;
+        color: white;
+        margin-top: 40px;
+        width: 100%;
+        padding: 12px;
+        outline: none;
+        background: #4f4d4f;
+        border: none;
+        font-size: 18px;
+        border-radius: 10px;
+        transition: 0.4s;
+      }
+    }
     .destination-container {
       display: flex;
+
       justify-content: space-around;
       width: 70%;
       h1 {
@@ -35,6 +66,17 @@
       color: wheat;
       border: solid 2px white;
       border-radius: 20px;
+      .label {
+        font-size: 20px;
+        color: wheat;
+      }
+      .vehicle-list {
+        display: flex;
+        font-size: 20px;
+        flex-direction: column;
+        color: rgb(0, 4, 28);
+        margin-top: 60px;
+      }
     }
     .time-box {
       padding: 30px;

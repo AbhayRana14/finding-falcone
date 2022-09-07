@@ -1,18 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react-dom/test-utils";
 
 export const falconePersistSlice = createSlice({
   name: "falconePersistReducer",
   initialState: {
-    details: null,
+    planetDetails: null,
+    vehicleDetails: null,
     isLoading: false,
     isTokenAvailable: false,
     token: "",
   },
   reducers: {
-    // SAVE DETAILS
-    saveDetailsFetch: (state, action) => {
-      state.planetDetails = action.payload.values;
+    // SAVE PLANET DETAILS
+    savePlanetDetails: (state, action) => {
+      state.planetDetails = action.payload;
+      state.isLoading = false;
+    },
+
+    // SAVE VEHICLE DETAILS
+    saveVehicleDetails: (state, action) => {
+      state.vehicleDetails = action.payload;
       state.isLoading = false;
     },
 
@@ -26,7 +32,8 @@ export const falconePersistSlice = createSlice({
 
 export const {
   // SAVE DETAILS
-  saveDetailsFetch,
+  savePlanetDetails,
+  saveVehicleDetails,
   setTokenAvailability,
 } = falconePersistSlice.actions;
 export default falconePersistSlice.reducer;

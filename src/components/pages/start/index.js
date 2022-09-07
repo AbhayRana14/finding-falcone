@@ -1,13 +1,18 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { getTokenFetch } from "../../../redux/falcone/reducer";
-
+import {
+  findPlanetsFetch,
+  getTokenFetch,
+  getVehiclesFetch,
+} from "../../../redux/falcone/reducer";
 
 const Start = () => {
   const dispatch = useDispatch();
 
   const generateToken = () => {
     dispatch(getTokenFetch());
+    dispatch(findPlanetsFetch({ dontShow: true }));
+    dispatch(getVehiclesFetch({ dontShow: true }));
   };
   return (
     <div className="login-container">

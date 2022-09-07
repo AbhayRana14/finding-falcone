@@ -12,6 +12,9 @@ export const STATUS_CODE = {
 
 export const TOAST_MESSAGE = {
   TOKEN_GENERATED: "Token Generated",
+  PLANET_SUCCESS: "Planets Fetched Successfully",
+  VEHIVLE_SUCCESS: "Vehicle Fetched Successfully",
   UN_AUTH: "Un-Authorized Request",
+  SUCCESS: "You win !",
   ERROR: "Something went wrong",
 };

@@ -1,0 +1,43 @@
+.success-container {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  .success-window {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      margin: 10px;
+      color: rgb(0, 163, 150);
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 0, 0, 0),
+        rgb(3, 13, 34)
+      );
+      border-radius: 5px;
+      padding: 15px;
+    }
+
+    button {
+      cursor: pointer;
+      color: white;
+      margin-top: 40px;
+      padding: 12px;
+      outline: none;
+      background: #03395d;
+      border: none;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: 0.4s;
+      &:hover {
+        background: #b3afb3;
+      }
+    }
+  }
+}
