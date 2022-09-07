@@ -1,0 +1,43 @@
+.home-container {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+  .game-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+
+    align-items: center;
+
+    .game-heading {
+      font-family: "Times New Roman", Times, serif;
+      padding: 100px;
+      color: wheat;
+    }
+
+    .destination-container {
+      display: flex;
+      justify-content: space-around;
+      width: 70%;
+      h1 {
+        color: rgb(33, 44, 118);
+      }
+    }
+
+    .destination-box {
+      padding: 20px;
+      height: 350px;
+      width: 250px;
+      color: wheat;
+      border: solid 2px white;
+      border-radius: 20px;
+    }
+    .time-box {
+      padding: 30px;
+    }
+  }
+}

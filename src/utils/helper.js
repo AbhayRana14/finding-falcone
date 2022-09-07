@@ -1,3 +1,3 @@
 export const getAccessToken = () => {
-  return localStorage.getItem("accessToken");
+  return localStorage.getItem("gameToken");
 };

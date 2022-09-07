@@ -1,17 +1,5 @@
 export const ROUTE = {
-  login: "/login",
-  entercode: "/entercode",
-  forgotpassword: "/forgotpassword",
-  changepassword: "/changepassword",
-  signup: "/register",
   home: "/home",
-};
-
-export const TYPE = {
-  DISABLE: "DISABLE",
-  ENABLE: "ENABLE",
-  EMAIL: "EMAIL",
-  DEVICE_TYPE: 0,
 };
 
 export const STATUS_CODE = {
@@ -22,11 +10,8 @@ export const STATUS_CODE = {
   notFound: 404,
 };
 
-export const FORMIK_REGEX = {
-  PASSWORD_REGEX:
-    /^.*(?=.{6})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-  ALPHA_REGEX: /^[a-zA-Z\s]*$/g,
-  ALPHA_NUMERIC_REGEX: /^[a-zA-Z\s]*$/,
-  NUMERIC_REGEX: /^[1-9]+[0-9]*$/,
-  EMAIL_REGEX: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+export const TOAST_MESSAGE = {
+  TOKEN_GENERATED: "Token Generated",
+  UN_AUTH: "Un-Authorized Request",
+  ERROR: "Something went wrong",
 };

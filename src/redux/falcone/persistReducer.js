@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react-dom/test-utils";
 
 export const falconePersistSlice = createSlice({
   name: "falconePersistReducer",
@@ -6,6 +7,7 @@ export const falconePersistSlice = createSlice({
     details: null,
     isLoading: false,
     isTokenAvailable: false,
+    token: "",
   },
   reducers: {
     // SAVE DETAILS
@@ -15,8 +17,9 @@ export const falconePersistSlice = createSlice({
     },
 
     // SET TOKEN AVAILABLE IF SUCCESSFUL
-    setTokenAvailability: (state) => {
+    setTokenAvailability: (state, action) => {
       state.isTokenAvailable = true;
+      state.token = action.payload;
     },
   },
 });
@@ -24,5 +27,6 @@ export const falconePersistSlice = createSlice({
 export const {
   // SAVE DETAILS
   saveDetailsFetch,
+  setTokenAvailability,
 } = falconePersistSlice.actions;
 export default falconePersistSlice.reducer;

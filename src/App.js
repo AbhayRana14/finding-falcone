@@ -12,7 +12,7 @@ function App() {
   return (
     <Routes>
       <Route element={<PublicRoute token={tokenVerify} />}>
-        <Route path="/" element={<Start />} />
+        <Route path="" element={<Start />} />
       </Route>
       <Route element={<ProtectedRoute token={tokenVerify} />}>
         <Route path="home" element={<Home />} />

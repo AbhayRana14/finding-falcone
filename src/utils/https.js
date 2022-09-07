@@ -10,22 +10,24 @@ const formatUrl = (url, params) => {
 };
 
 const instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_EXCHANGE_URL,
-  withCredentials: false,
   headers: {
-    "content-type": "application/json",
+    accept: "aplication/json",
   },
 });
 
 /** POST Request */
-export const httpPost = (url, header, data, params = {}) =>
-  new Promise((resolve) => {
-    instance
-      .post(formatUrl(url, params), data, {
-        headers: {
-          Authorization: header,
-        },
-      })
+export const httpPost = (url, header, data, params = {}) => {
+  const modHeader = { accept: "application/json" };
+  if (Object.keys(header).length) {
+    modHeader["Authorization"] = header;
+  }
+  return new Promise((resolve) => {
+    axios({
+      method: "post",
+      url: formatUrl(url, params),
+      headers: modHeader,
+      data: data,
+    })
       .then((res) => {
         resolve(res);
       })
@@ -33,6 +35,7 @@ export const httpPost = (url, header, data, params = {}) =>
         resolve(error.response);
       });
   });
+};
 
 /** GET Request */
 export const httpGet = async (url, header, params = {}) =>

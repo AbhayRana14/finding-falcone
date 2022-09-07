@@ -1,0 +1,76 @@
+.game-layout-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../../assets/images/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .header-div {
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    background-image: linear-gradient(
+      to left,
+      rgba(255, 0, 0, 0),
+      rgb(3, 13, 34)
+    );
+
+    .logo {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 2em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        list-style: none;
+        margin-left: 20px;
+
+        .active {
+          background: #fff;
+          color: #2b1055;
+        }
+
+        a {
+          text-decoration: none;
+          padding: 6px 15px;
+          color: #fff;
+          border-radius: 20px;
+
+          &:hover {
+            background: #fff;
+            color: #2b1055;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-div {
+    height: 10vh;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0),
+      rgb(3, 13, 34)
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: wheat;
+    a {
+      color: white;
+    }
+  }
+}

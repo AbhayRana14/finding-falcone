@@ -12,26 +12,25 @@ import {
 import { httpGet, httpPost } from "../../utils/https";
 import URLS from "../../utils/urls";
 import { toasts } from "../../components/common/Toast/Toast";
-import { STATUS_CODE } from "../../utils/constants";
-import {} from "./persistReducer";
+import { STATUS_CODE, TOAST_MESSAGE } from "../../utils/constants";
+import { setTokenAvailability } from "./persistReducer";
 import { getAccessToken } from "../../utils/helper";
 
 //GET TOKEN
 function* getTokenSaga({ payload }) {
   try {
-    const response = yield httpPost(`${URLS.APP.FALCONE.GET_TOKEN}`, {});
+    const response = yield httpPost(`${URLS.APP.FALCONE.GET_TOKEN}`, {}, {});
     if (response?.status === STATUS_CODE?.successful) {
-      toasts.success(response?.data?.message);
-      yield put(payload?.callback(response));
+      toasts.success(TOAST_MESSAGE.TOKEN_GENERATED);
+      yield put(setTokenAvailability(response?.data?.token));
       yield put(getTokenSuccess());
     } else if (
-      response?.data?.status ===
-      (STATUS_CODE?.unAuthorized || STATUS_CODE.forbidden)
+      response?.status === (STATUS_CODE?.unAuthorized || STATUS_CODE.forbidden)
     ) {
-      toasts.error(response?.data?.message);
+      toasts.error(TOAST_MESSAGE.UN_AUTH);
     } else {
       yield put(getTokenFailure());
-      toasts.error(response?.data?.message);
+      toasts.error(TOAST_MESSAGE.ERROR);
     }
   } catch (error) {
     yield put(findQueenFailure());
